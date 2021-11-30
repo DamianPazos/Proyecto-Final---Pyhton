@@ -10,13 +10,19 @@ class Cerveza(models.Model):
     def __str__(self):
         return f'{self.marca} - Tipo {self.tipo} de {self.capacidad} cm3'
     
-class vino(models.Model):
+class Vino(models.Model):
     marca=models.CharField(max_length=15)
     tipo=models.CharField(max_length=15)
-    capacidad=models.DecimalField(decimal_places=2,max_digits=4)
+    capacidad=models.IntegerField()
     
-class gaseosa(models.Model):
+    def __str__(self):
+        return f'{self.marca} - Tipo {self.tipo} de {self.capacidad} cm3'
+    
+class Gaseosa(models.Model):
     marca=models.CharField(max_length=15)
     tipo=models.CharField(max_length=15)
-    capacidad=models.DecimalField(decimal_places=2,max_digits=4)    
+    capacidad=models.IntegerField()    
     light=models.BooleanField()
+
+    def __str__(self):
+        return f'{self.marca} - Tipo {self.tipo} de {self.capacidad} cm3'

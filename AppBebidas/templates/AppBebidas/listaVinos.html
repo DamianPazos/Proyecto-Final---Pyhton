@@ -1,14 +1,14 @@
 {% extends 'AppBebidas\inicio.html' %}
 
 {% block head_block %}
-<title>Lista de Gaseosas</title>
+<title>Lista de Vinos</title>
 {% endblock head_block %}
 
 {% block body_block %}
 
- <h1>GASEOSAS</h1> <a href={% url 'nuevaGaseosa' %}>Añadir nueva gaseosa</a>
+ <h1>VINOS</h1> <a href={% url 'nuevaVino' %}>Añadir nuevo vino</a>
 
-    <form action={% url 'listaGaseosas' %} method="GET">
+    <form action={% url 'listaVinos' %} method="GET">
         <input type="text" name='marca' placeholder="Marca a buscar"/>
         <input type="submit" value="Buscar"/>
     </form>
@@ -17,16 +17,16 @@
 
 
     <ul>
-        {% if unidad_gaseosas %}
-            {% for G in unidad_gaseosas %}
+        {% if unidad_vinos %}
+            {% for V in unidad_vinos %}
         
                 <li>
-                    {{G}}
+                    {{V}}
                 </li>
         
             {% endfor %}
         {% else %}        
-                <h2>No hay gaseosas con ese nombre de marca</h2>
+                <h2>No hay vinos con ese nombre de marca</h2>
         {% endif %}
     </ul>
 
