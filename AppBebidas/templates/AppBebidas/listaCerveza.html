@@ -1,0 +1,33 @@
+{% extends 'AppBebidas\inicio.html' %}
+
+{% block head_block %}
+<title>Lista de Cervezas</title>
+{% endblock head_block %}
+
+{% block body_block %}
+
+ <h1>CERVEZAS</h1> <a href={% url 'nuevaCerveza' %}>Añadir nueva cerveza</a>
+
+    <form action={% url 'listaCervezas' %} method="GET">
+        <input type="text" name='marca' placeholder="Marca a buscar"/>
+        <input type="submit" value="Buscar"/>
+    </form>
+
+
+
+
+    <ul>
+        {% if unidad_cervezas %}
+            {% for C in unidad_cervezas %}
+        
+                <li>
+                    {{C}}
+                </li>
+        
+            {% endfor %}
+        {% else %}        
+                <h2>No hay cervezas con ese nombre de marca</h2>
+        {% endif %}
+    </ul>
+
+{% endblock body_block %}

@@ -1,0 +1,18 @@
+{% extends 'AppBebidas\inicio.html' %}
+
+{% block head_block %}
+<title>Añadir Cerveza</title>
+{% endblock head_block %}
+
+{% block body_block %}
+
+ <h1>AÑADIR CERVEZA</h1>
+
+    <form action={% url 'nuevaCerveza' %} method="POST">
+        {% csrf_token %}
+        {{formulario_cerveza.as_table}}
+        <input type="submit" value="Añadir"/>
+    </form>
+
+{% endblock body_block %}
+
